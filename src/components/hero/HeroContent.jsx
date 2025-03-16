@@ -8,9 +8,13 @@ export default function HeroContent() {
             <br />
             <span>health goals</span>
           </h1>
-          <button type="button">
+          <a href="#searchBox">
             <span>Find my treatment</span>
-          </button>
+          </a>
+          
+          {/* <button type="button">
+            <span>Find my treatment</span>
+          </button> */}
         </div>
       </div>
     </section>

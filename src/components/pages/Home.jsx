@@ -11,7 +11,6 @@ import Testimonials from "../testimonials/Testimonials";
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <HeroContent />
       <Search />
       <Categories />
@@ -19,7 +18,6 @@ export default function Home() {
       <Products />
       <Add />
       <Testimonials />
-      <Footer />
     </main>
   );
 }

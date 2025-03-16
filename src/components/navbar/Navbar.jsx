@@ -3,6 +3,7 @@ import cartIcon from "../../assets/icons/cart-white.svg";
 import Nav from "./Nav";
 import Social from "./Social";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
 
@@ -36,8 +37,8 @@ export default function Navbar() {
               </button>
             </div>
             <div className="action-links">
-              <a href="#" className="active">Sign Up</a>
-              <a href="#">Log In</a>
+              <Link to="/sign-up" className="active">Sign Up</Link>
+              <Link to="/log-in">Log In</Link>
               <button type="button">
                 <img src={cartIcon} alt="cart icon" />
               </button>

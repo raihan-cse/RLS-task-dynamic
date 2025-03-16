@@ -1,5 +1,6 @@
 import { useState } from "react";
 import dwonArrow from "../../assets/icons/down-arrow.svg";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Nav({navActive}) {
 
@@ -7,12 +8,11 @@ export default function Nav({navActive}) {
 
   return (
     <nav className={`nav ${navActive ? "active" : ""}`}>
-      <a href="/">Home</a>
+      <NavLink to="/">Home</NavLink>
       <div className="dropdown">
         <button
           type="button"
           onClick={() => setActive("catg")}
-          // onBlur={() => setActive("")}
         >
           Category
           <img src={dwonArrow} alt="icon" />
@@ -21,12 +21,12 @@ export default function Nav({navActive}) {
           className={`dropdown-content ${active === "catg" ? "active" : ""}`}
         >
           <div className="dropdown-inner">
-            <a href="#">Weight Loss</a>
-            <a href="#">Sexual Health</a>
-            <a href="#">Brain Helth</a>
-            <a href="#">Testosterone HRT</a>
-            <a href="#">Athletic Performance</a>
-            <a href="#">Beauty and Hair Loss</a>
+            <Link to="#">Weight Loss</Link>
+            <Link to="#">Sexual Health</Link>
+            <Link to="#">Brain Helth</Link>
+            <Link to="#">Testosterone HRT</Link>
+            <Link to="#">Athletic Performance</Link>
+            <Link to="#">Beauty and Hair Loss</Link>
           </div>
         </div>
       </div>
@@ -34,7 +34,6 @@ export default function Nav({navActive}) {
         <button 
           type="button" 
           onClick={() => setActive("tprd")}
-          // onBlur={() => setActive("")}
         >
           Top Products
           <img src={dwonArrow} alt="icon" />
@@ -43,17 +42,15 @@ export default function Nav({navActive}) {
           className={`dropdown-content ${active === "tprd" ? "active" : ""}`}
         >
           <div className="dropdown-inner">
-            <a href="#">Weight Loss</a>
-            <a href="#">Sexual Health</a>
-            <a href="#">Brain Helth</a>
-            <a href="#">Testosterone HRT</a>
-            <a href="#">Athletic Performance</a>
-            <a href="#">Beauty and Hair Loss</a>
+            <Link to="#">Retarutide</Link>
+            <Link to="#">2X CJC / Ipamorelin</Link>
+            <Link to="#">Lyopholized Oxytocin</Link>
+            <Link to="#">Compounded NAD+ 1000 mg</Link>
           </div>
         </div>
       </div>
-      <a href="/">Contact Us</a>
-      <a href="/">FAQs</a>
+      <NavLink to="/contact-us">Contact Us</NavLink>
+      <NavLink to="/faqs">FAQs</NavLink>
     </nav>
   );
 }

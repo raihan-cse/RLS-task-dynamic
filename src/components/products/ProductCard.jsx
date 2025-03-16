@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cartIcon from "../../assets/icons/cart.svg";
 
 export default function ProductCard({link, title, image, label, price, isLabeled}) {
@@ -6,7 +7,7 @@ export default function ProductCard({link, title, image, label, price, isLabeled
       <div className="main-content">
         <div className="img-title">
           <img src={image} alt="product image" />
-          <a href={link}>{title}</a>
+          <Link to={link}>{title}</Link>
         </div>
 
         <div className="price-cart">

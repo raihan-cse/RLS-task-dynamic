@@ -113,10 +113,18 @@
                             vertical-align: middle;
                         }
 
-                        &:hover {
-                            height: 100%;
-                            opacity: 1;
-                            visibility: visible;
+                        &.active {
+                            position: relative;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: -2px;
+                                height: 2px;
+                                background-color: $white;
+                                
+                            }
                         }
                     }
 
@@ -140,7 +148,7 @@
                             .dropdown-inner {
                                 min-width: 162px;
                                 border-radius: 8px;
-                                background: rgba(0, 0, 0, 0.5);
+                                background: rgb(62, 62, 62, .7);
                                 padding: 12px;
 
                                 a {
@@ -471,7 +479,8 @@
         }
     }
 
-    button {
+    a, button {
+        display: inline-flex;
         margin-top: 40px;
         padding: 2px;
         border-radius: 32px;
@@ -518,7 +527,7 @@
             @include fonted(Impact, 400, 52px, 110%);
         }
 
-        button {
+        a, button {
             span {
                 @include fonted($base-font-family, 500, 20px, 140%);
                 padding: 16px 28px;
@@ -546,7 +555,7 @@
             @include fonted(Impact, 400, 38px, 115%);
         }
 
-        button {
+        a, button {
             span {
                 @include fonted($base-font-family, 500, 18px, 140%);
                 padding: 12px 18px;
