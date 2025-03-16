@@ -1,0 +1,60 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+    margin            : 0;
+    padding           : 0;
+    outline           : none;
+    box-sizing        : border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing   : border-box;
+}
+
+html {
+    text-size-adjust           : 100%;
+    -webkit-text-size-adjust   : 100%;
+    -moz-text-size-adjust      : 100%;
+}
+
+body {
+    position  : relative;
+    overflow-x: hidden;
+    color: $white;
+    font: {
+        family: $base-font-family;
+        weight: $base-font-weight;
+        size: $base-font-size;
+    }
+    background-image: url(../images/bg-image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-position: center center;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input {
+    outline: 0;
+    border: 0;
+    &:focus {
+        outline: 0;
+    }
+}
+
+a {text-decoration: none;}
+
+ul {
+    list-style: none;
+}
+
+@media (max-width: 1399.98px) {
+    body {
+        background-position: center center;
+    }
+}

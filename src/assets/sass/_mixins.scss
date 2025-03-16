@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin bordered($radius: 100px) {
+    border: 1px solid $white;
+    border-radius: $radius;
+}
+
+@mixin fonted($family, $weight, $size, $height) {
+    font: {
+        family: $family;
+        weight: $weight;
+        size: $size;
+    }
+    line-height: $height;
+}
