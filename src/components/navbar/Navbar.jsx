@@ -2,16 +2,21 @@ import logoImg from "../../assets/images/logo.png";
 import cartIcon from "../../assets/icons/cart-white.svg";
 import Nav from "./Nav";
 import Social from "./Social";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
 
   const [navActive, setNavActive] = useState(false);
+  const location = useLocation();
 
   const navToggle = () => {
     setNavActive(prevState => !prevState);
   }
+
+  useEffect(() => {
+    setNavActive(prevState => !prevState);
+  },[location]);
 
   return (
     <section className="navbar-section">
