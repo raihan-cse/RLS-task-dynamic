@@ -11,6 +11,11 @@ import prdImg6 from "../../assets/images/product/prd-img-6.png";
 import prdImg7 from "../../assets/images/product/prd-img-7.png";
 import ProductPager from "./ProductPager";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Navigation } from 'swiper/modules';
+import "swiper/scss";
+import "swiper/scss/grid";
+
 export default function Products() {
     const [activeTab, setActiveTab] = useState("All");
   return (
@@ -55,68 +60,151 @@ export default function Products() {
           </button>
         </div>
         <div className="product-cards">
-          <ProductCard
-            isLabeled
-            link="#"
-            title="Retarutide"
-            image={prdImg1}
-            label="Research use only"
-            price="$39.99/per month"
-          />
-          <ProductCard
-            isLabeled
-            link="#"
-            title="Lyopholized Glow (GHK-CU/ BPC-157/TB-500)"
-            image={prdImg2}
-            label="Research use only"
-            price="$39.99/per month"
-          />
-          <ProductCard
-            isLabeled
-            link="#"
-            title="Compounded Sermorelin 15mg"
-            image={prdImg3}
-            label="Recurring Plan"
-            price="Starting at $179 Monthly + $45 Physician consult"
-          />
-          <ProductCard
-            link="#"
-            title="2X CJC / Ipamorelin"
-            image={prdImg4}
-            label="Recurring Plan"
-            price="Starting at $149 Monthly + $45 Physician consult + $100 Lab Charge"
-          />
-          <ProductCard
-            link="#"
-            title="Lyopholized Oxytocin"
-            image={prdImg5}
-            label="Research use only"
-            price="$39.99/per month"
-          />
-          <ProductCard
-            isLabeled
-            link="#"
-            title="Lyopholized Finasteride 1mg"
-            image={prdImg1}
-            label="Recurring Plan"
-            price="$39.99/per month"
-          />
-          <ProductCard
-            link="#"
-            title="Lyopholized Oxytocin"
-            image={prdImg6}
-            label="Research use only"
-            price="Starting at $179 Monthly + $45 Physician consult"
-          />
-          <ProductCard
-            isLabeled
-            link="#"
-            title="Lyopholized Finasteride 1mg"
-            image={prdImg7}
-            label="Recurring Plan"
-            price="Starting at $149 Monthly + $45 Physician consult + $100 Lab Charge"
-          />
+          <Swiper
+            slidesPerView={1}
+            grid={{
+              rows: 2,
+            }}
+            spaceBetween={16}
+            navigation={{
+              prevEl: `.swiper-button-prev`,
+              nextEl: `.swiper-button-next`
+            }} 
+            modules={[Grid ,Navigation]}
+            breakpoints={{
+              576: {
+                slidesPerView: 2
+              },
+              992: {
+                slidesPerView: 3
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 24
+              }
+            }}
+          >
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Retarutide"
+                image={prdImg1}
+                label="Research use only"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Lyopholized Glow (GHK-CU/ BPC-157/TB-500)"
+                image={prdImg2}
+                label="Research use only"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Compounded Sermorelin 15mg"
+                image={prdImg3}
+                label="Recurring Plan"
+                price="Starting at $179 Monthly + $45 Physician consult"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                link="#"
+                title="2X CJC / Ipamorelin"
+                image={prdImg4}
+                label="Recurring Plan"
+                price="Starting at $149 Monthly + $45 Physician consult + $100 Lab Charge"
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ProductCard
+                link="#"
+                title="Lyopholized Oxytocin"
+                image={prdImg5}
+                label="Research use only"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Lyopholized Finasteride 1mg"
+                image={prdImg1}
+                label="Recurring Plan"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                link="#"
+                title="Lyopholized Oxytocin"
+                image={prdImg6}
+                label="Research use only"
+                price="Starting at $179 Monthly + $45 Physician consult"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Lyopholized Finasteride 1mg"
+                image={prdImg7}
+                label="Recurring Plan"
+                price="Starting at $149 Monthly + $45 Physician consult + $100 Lab Charge"
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Retarutide"
+                image={prdImg1}
+                label="Research use only"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Lyopholized Glow (GHK-CU/ BPC-157/TB-500)"
+                image={prdImg2}
+                label="Research use only"
+                price="$39.99/per month"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                isLabeled
+                link="#"
+                title="Compounded Sermorelin 15mg"
+                image={prdImg3}
+                label="Recurring Plan"
+                price="Starting at $179 Monthly + $45 Physician consult"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProductCard
+                link="#"
+                title="2X CJC / Ipamorelin"
+                image={prdImg4}
+                label="Recurring Plan"
+                price="Starting at $149 Monthly + $45 Physician consult + $100 Lab Charge"
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
+        
         <ProductPager />
       </div>
     </section>

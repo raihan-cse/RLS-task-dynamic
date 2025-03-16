@@ -115,6 +115,7 @@
 
                         &.active {
                             position: relative;
+
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -123,7 +124,7 @@
                                 bottom: -2px;
                                 height: 2px;
                                 background-color: $white;
-                                
+
                             }
                         }
                     }
@@ -479,7 +480,8 @@
         }
     }
 
-    a, button {
+    a,
+    button {
         display: inline-flex;
         margin-top: 40px;
         padding: 2px;
@@ -527,7 +529,8 @@
             @include fonted(Impact, 400, 52px, 110%);
         }
 
-        a, button {
+        a,
+        button {
             span {
                 @include fonted($base-font-family, 500, 20px, 140%);
                 padding: 16px 28px;
@@ -555,7 +558,8 @@
             @include fonted(Impact, 400, 38px, 115%);
         }
 
-        a, button {
+        a,
+        button {
             span {
                 @include fonted($base-font-family, 500, 18px, 140%);
                 padding: 12px 18px;
@@ -850,13 +854,28 @@
     }
 
     .product-cards {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 24px;
-        row-gap: 16px;
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        // column-gap: 24px;
+        // row-gap: 16px;
         padding-top: 64px;
 
+        .swiper {
+            width: 100%;
+            height: 100%;
+
+            .swiper-wrapper {
+                flex-direction: row;
+
+                .swiper-slide {
+                    height: initial !important;
+                    margin-top: 16px !important;
+                }
+            }
+        }
+
         .product-card {
+            height: 100%;
             position: relative;
             background: rgba(49, 65, 140, 0.3);
             border-radius: 12px;
@@ -982,14 +1001,14 @@
             }
         }
 
-        .product-cards {
-            grid-template-columns: repeat(3, 1fr);
-            .product-card {
-                &:nth-child(n + 7) {
-                    display: none;
-                }
-            }
-        }
+        // .product-cards {
+        //     grid-template-columns: repeat(3, 1fr);
+        //     .product-card {
+        //         &:nth-child(n + 7) {
+        //             display: none;
+        //         }
+        //     }
+        // }
     }
 }
 
@@ -1005,9 +1024,9 @@
             }
         }
 
-        .product-cards {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        // .product-cards {
+        //     grid-template-columns: repeat(2, 1fr);
+        // }
     }
 }
 
@@ -1040,8 +1059,8 @@
         }
 
         .product-cards {
-            grid-template-columns: 1fr;
-            row-gap: 24px;
+            // grid-template-columns: 1fr;
+            // row-gap: 24px;
             padding-top: 48px;
 
             .product-card {
@@ -1220,9 +1239,6 @@
     overflow-x: hidden;
 
     .testimonials {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
         margin: 0 -128px;
 
         .testm-card {
@@ -1273,21 +1289,19 @@
         }
     }
 
-    .testm-pager {
+    .swiper-pagination {
         padding-top: 48px;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
+        position: initial;
 
-        button {
+        .swiper-pagination-bullet {
             width: 14px;
             height: 14px;
             border-radius: 50%;
             background-color: #3B3B41;
+            opacity: 1;
+            margin: 0 10px;
 
-            &.active {
+            &.swiper-pagination-bullet-active {
                 width: 16px;
                 height: 16px;
                 background-color: #B9B8B8;
@@ -1300,7 +1314,6 @@
     .testimonial-section {
 
         .testimonials {
-            // margin: 0 -180px;
             margin: 0 -98px;
 
             .testm-card {
@@ -1321,6 +1334,7 @@
             margin: 0 -222px;
 
             .testm-card {
+                padding: 28px 30px;
 
                 p {
                     @include fonted($base-font-family, 400, 16px, 160%);
@@ -1335,18 +1349,27 @@
     }
 }
 
+@media (max-width: 991.98px) {
+    .testimonial-section {
+
+        .testimonials {
+            margin: 0 -190px;
+
+            .testm-card {
+                padding: 24px 16px;
+            }
+        }
+    }
+}
+
 @media (max-width: 767.98px) {
     .testimonial-section {
 
         .testimonials {
-            grid-template-columns: repeat(3, 1fr);
-            margin: 0 -248px;
+            margin: 0 -200px;
 
             .testm-card {
-
-                &:last-child {
-                    display: none;
-                }
+                padding: 24px 16px;
             }
         }
     }
@@ -1361,10 +1384,6 @@
 
             .testm-card {
                 padding: 24px 16px;
-
-                &:last-child {
-                    display: none;
-                }
 
                 p {
                     @include fonted($base-font-family, 400, 14px, 140%);
@@ -1399,9 +1418,12 @@
             }
         }
 
-        .testm-pager {
+        .swiper-pagination {
             padding-top: 32px;
-            gap: 16px;
+
+            .swiper-pagination-bullet {
+                margin: 0 8px;
+            }
         }
     }
 }
