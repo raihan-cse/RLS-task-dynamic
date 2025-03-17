@@ -1,4 +1,4 @@
-# Make this project using - React + Vite
+# Create this project using - React + Vite
 
 ## Clone the repository on github
 
