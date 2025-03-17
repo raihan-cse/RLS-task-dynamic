@@ -15,7 +15,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    setNavActive(prevState => !prevState);
+    setNavActive(false);
   },[location]);
 
   return (
